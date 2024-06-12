@@ -3,6 +3,8 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Fitlog from '../components/FItlog';
 import server_url from '../services/server_url'
+import { updateProfile } from '../services/allApis';
+import { toast } from 'react-toastify';
 
 
 function Profile() {
@@ -36,8 +38,37 @@ function Profile() {
 
     console.log(user);
 
-    const handleProfileUpdate=()=>{
+    const handleProfileUpdate=async()=>{
         console.log(user);
+        const {username,password,email,weight,height,profile}=user
+        if(!username || !password || !email || !weight || !height ){
+            toast.warning("Enter Valid Inputs!!")
+        }
+        else{
+            
+        const formData = new FormData();
+        formData.append("username", username);
+        formData.append("password", password);
+        formData.append("email", email);
+        formData.append("weight", weight);
+        formData.append("height", height);
+        preview ? formData.append("profile", profile) : formData.append("profile", existingProfile);
+
+        const header = {
+            "Authorization": `Bearer ${sessionStorage.getItem('token')}`,
+            "Content-Type": preview ? "multipart/form-data" : "application/json"
+        }
+        const result=await updateProfile(header,formData)
+        console.log(result);
+        if(result.status==200){
+            toast.success("Profile Updated Successfully")
+            sessionStorage.setItem("userDetails",JSON.stringify(result.data))
+        }
+        else{
+            toast.error(result.response.data)
+        }
+        }
+
     }
     return (
 

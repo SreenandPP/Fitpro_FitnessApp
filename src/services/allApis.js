@@ -24,3 +24,9 @@ export const allWorkouts=async(header,search)=>{
 export const allDiets=async(header)=>{
     return await commonApi("GET",`${base_url}/alldiets`,"",header)
 }
+
+//update-profile
+
+export const updateProfile=async(header,data)=>{
+    return await commonApi("PUT",`${base_url}/profile-update`,data,header)
+}
