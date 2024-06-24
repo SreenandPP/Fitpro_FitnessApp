@@ -28,7 +28,7 @@ function Fitlog({status}) {
            
 <Navbar expand="lg" className="navbar-dark" style={{background:'black'}}>
   <Container>
-    <Navbar.Brand className="d-flex" href="#home">
+    <Navbar.Brand className="d-flex" href="/">
       <img
         className="img-fluid logo"
         src="https://static.vecteezy.com/system/resources/thumbnails/013/146/831/small_2x/body-builder-lifting-a-dumbbell-png.png"

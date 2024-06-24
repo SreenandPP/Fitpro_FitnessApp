@@ -58,6 +58,102 @@ body{
 /* ////////////////////////////////////////////////////////////// */
 
 
+.card-custom {
+  width: 100%;
+  max-width: 18rem;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.card-img-custom {
+  height: 300px;
+  object-fit: cover;
+}
+@media (min-width: 576px) {
+  .card-img-custom {
+      height: 325px;
+  }
+
+ 
+
+}
+
+
+
+
+
+@media only screen and (max-width: 635px){
+  .moto{
+    font-size: 20px;
+  }
+  
+}
+
+
+@media only screen and (max-width: 480px){
+
+.moto{
+font-size: 18px;
+}
+
+}
+
+@media only screen and (max-width: 395px){
+
+.moto{
+font-size: 14px;
+}
+}
+
+
+.responsive-container {
+  width: 90%;
+  max-width: 700px;
+  height: 300px;
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.responsive-container p {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.responsive-container span {
+  color: var(--dark-red);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .responsive-container {
+      height: auto;
+  }
+
+  .responsive-container p {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-container {
+      padding: 10px;
+  }
+
+  .responsive-container p {
+      font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
 
 
 

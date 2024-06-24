@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { allWorkouts } from '../services/allApis'
 import WorkoutCard from '../components/WorkoutCard'
-import { Row,Col } from 'react-bootstrap'
+import { Row,Col,Container } from 'react-bootstrap'
 import Fitlog from '../components/FItlog'
+
 
 function Workouts() {
 
@@ -42,42 +43,36 @@ function Workouts() {
    return (
       <>
        <Fitlog/>
-         <div className='w-100 p-5' 
-          style={{
-            height: '100vh',
-            backgroundImage: `url('https://w0.peakpx.com/wallpaper/127/885/HD-wallpaper-woman-lifting-barbell.jpg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-             // Align items in a column
-         }}
-         >
-            <div className='text-center mt-5 d-flex my-4 justify-content-between'>
-               <h2 className='text-white '>Workouts</h2>
-               {/* <input type="text" onChange={(e)=>{setSearch(e.target.value)}} className='form-control w-25' placeholder='Enter body part for workout search'  /> */}
-            </div>
-
-                <Row className='mt-3 p-5 '>
-                  {
-                     workouts.length>0?
-                     workouts.map(item=>(
-                        <Col className='p-5'>
-                   
-                        <WorkoutCard  workout={item}/>
-                        </Col>
-                       
-                     ))
-                     :
-                     <h2 className='text-white text-center mt-4'>No Workouts Available!!</h2>
-
-
-                  }
-                   
-                  
-                  </Row>  
-                   
-              
-         </div>
+       <div 
+      className='w-100 p-5' 
+      style={{
+        minHeight: '100vh',
+        backgroundImage: `url('https://w0.peakpx.com/wallpaper/127/885/HD-wallpaper-woman-lifting-barbell.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <Container>
+        <div className='text-center mt-5 d-flex my-4 justify-content-between flex-wrap'>
+          <h2 className='text-white'>Workouts</h2>
+         
+        </div>
+        <Row className='mt-3 p-5'>
+          {workouts.length > 0 ? (
+            workouts.map(item => (
+              <Col xs={12} sm={6} md={4} lg={3} className='p-3' key={item.id}>
+                <WorkoutCard workout={item} />
+              </Col>
+            ))
+          ) : (
+            <Col className='text-center'>
+              <h2 className='text-white mt-4'>No Workouts Available!!</h2>
+            </Col>
+          )}
+        </Row>
+      </Container>
+    </div>
       </>
    )
 }

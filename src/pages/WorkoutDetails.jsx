@@ -18,28 +18,29 @@ function WorkoutDetails() {
   return (
     <>
     <Fitlog/>
-     <div className='p-5 container'>
-      
-      <Row >
-        <Col sm={12} md={6} lg={6} className='mt-5'>
-        <img className='img-fluid ms-5 ' style={{height:'400px',width:'400px',borderRadius:'10px'}} src={`${base_url}/uploads/${workout.image}`}   alt="img" />
-    
-        </Col>
-        <Col sm={12} md={6} lg={6} className='p-5 text-white'>
-             <div className='mb-3 '>
-                <h1 style={{color:'var(--dark-red)'}}>{workout.title}</h1>
-             </div>
-             <h3 className='mb-1'>{workout.category}</h3>
-    
-             <p className='mb-3 mt-3' style={{textAlign:'justify'}}>{workout.description}</p>
-             <div className='d-flex justify-content-between '>
-              {/* <button className='btn btn-lg  shadow mt-4' style={{border:'solid 3px var(--dark-red)'}} >
-              <i className="fa-solid fa-check fa-xl" style={{color:'var(--dark-red)'}}></i> 
-              </button> */}
-             </div>
-        </Col>
-      </Row>
-   </div>
+    <div className='p-3 container mt-5'>
+  <Row className='align-items-center'>
+    {/* Image Column */}
+    <Col xs={12} md={6} lg={6} className='mb-3 text-center'>
+      <img
+        className='img-fluid'
+        style={{ maxWidth: '100%',width:"400px", height: '400px', borderRadius: '10px' }}
+        src={`${base_url}/uploads/${workout.image}`}
+        alt="Workout"
+      />
+    </Col>
+    {/* Text Column */}
+    <Col xs={12} md={6} lg={6} className='p-3 text-center text-md-start'>
+      <div className='mb-3 '>
+        <h1 style={{ color: 'var(--dark-red)' }}>{workout.title}</h1>
+      </div>
+      <h3 className='mb-1 text-white' >{workout.category}</h3>
+      <p className='mb-3 mt-3 text-white' style={{ textAlign: 'justify' }}>
+        {workout.description}
+      </p>
+    </Col>
+  </Row>
+</div>
     </>
   )
 }

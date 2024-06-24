@@ -15,11 +15,11 @@ function Footer() {
             </p>
 
           </div>
-          <div className='col  ' >
+          <div className='col  '  >
             <h4 style={{color:'var(--dark-red)'}}>Links</h4>
-            <Link to={'/'} style={{color:'white', textDecorationLine:'none' }}>Landing</Link><br />
-            <Link to={'/dash'} style={{color:'white', textDecorationLine:'none' }}>Dashboard</Link><br />
-            <Link to={'/his'} style={{color:'white', textDecorationLine:'none' }}>History</Link>
+            <Link to={'/bmi'} style={{color:'white', textDecorationLine:'none' }}>Bmi</Link><br />
+            <Link to={'/workouts'} style={{color:'white', textDecorationLine:'none' }}>Workouts</Link><br />
+            <Link to={'/diet'} style={{color:'white', textDecorationLine:'none' }}>Diet</Link>
           </div>
           <div className='col  '>
             <h4 style={{color:'var(--dark-red)'}}>Reference</h4>
